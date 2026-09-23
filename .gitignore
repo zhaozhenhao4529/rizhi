@@ -1,0 +1,15 @@
+node_modules/
+frontend/dist/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+*.log
+.DS_Store
+
+# 旧草稿和运行时上传，不进仓库
+_backup_vue/
+data/
+backend/uploads/tmp_*
+backend/uploads/door_*
