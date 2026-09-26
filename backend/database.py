@@ -46,6 +46,18 @@ CREATE TABLE IF NOT EXISTS moments (
     ai_powered INTEGER DEFAULT 0,
     created_at TEXT DEFAULT (datetime('now', 'localtime'))
 );
+
+CREATE TABLE IF NOT EXISTS accessories (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    category TEXT NOT NULL,
+    style TEXT DEFAULT '百搭',
+    material TEXT DEFAULT '金属',
+    color TEXT,
+    visual_weight INTEGER DEFAULT 1,
+    image_path TEXT NOT NULL,
+    created_at TEXT DEFAULT (datetime('now', 'localtime'))
+);
 """
 
 JSON_FIELDS = {"colors", "style_tags", "season", "item_ids", "weather", "insights"}
