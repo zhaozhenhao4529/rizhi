@@ -56,4 +56,19 @@ export const api = {
     request(`/api/day?date=${encodeURIComponent(date || '')}&city=${encodeURIComponent(city || '北京')}`),
   rehearse: (city, occasion) =>
     request(`/api/day/rehearse?city=${encodeURIComponent(city)}&occasion=${encodeURIComponent(occasion)}`, { method: 'POST' }),
+  },
+uploadAccessory: (formData) => {
+    return request('/accessories/upload', { method: 'POST', body: formData })
+  },
+  listAccessories: (category = '全部') =>
+    request(`/accessories/list?category=${encodeURIComponent(category)}`),
+  deleteAccessory: (id) => request(`/accessories/${id}`, { method: 'DELETE' }),
+  aiMatchAccessories: (outfitInfo) => {
+    const fd = new FormData()
+    Object.entries(outfitInfo).forEach(([k, v]) => fd.append(k, v))
+    return request('/accessories/ai-match', { method: 'POST', body: fd })
+  },
 }
+
+  
+
