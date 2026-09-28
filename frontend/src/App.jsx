@@ -10,7 +10,7 @@ import Diagnosis from './pages/Diagnosis'
 import Snap from './pages/Snap'
 import Day from './pages/Day'
 import About from './pages/About'
-
+import Accessories from './pages/Accessories'
 export default function App() {
   const [gender, setGender] = useState(() => localStorage.getItem('rizhi_gender'))
 
@@ -28,6 +28,7 @@ export default function App() {
           <Route path="/snap" element={<Snap />} />
           <Route path="/day" element={<Day />} />
           <Route path="/about" element={<About />} />
+          <Route path="/accessories" element={<Accessories />} />
           <Route path="/wardrobe" element={<Wardrobe />} />
           <Route path="/upload" element={<Upload />} />
           <Route path="/calendar" element={<Calendar />} />
