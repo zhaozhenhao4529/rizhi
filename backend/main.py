@@ -16,7 +16,7 @@ from pydantic import BaseModel
 import database as db
 import ai_service
 import weather as weather_service
-
+from routers import accessories
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 UPLOAD_DIR = os.path.join(BASE_DIR, "uploads")
 os.makedirs(UPLOAD_DIR, exist_ok=True)
@@ -32,7 +32,7 @@ app.add_middleware(
 
 db.init_db()
 app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")
-
+app.include_router(accessories.router)
 # 生产模式：托管前端构建产物
 DIST_DIR = os.path.join(BASE_DIR, "..", "frontend", "dist")
 
